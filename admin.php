@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['unique_id'])) {
+    header("location:signin.html");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +38,16 @@
 </head>
 
 <body >
+    <?php
+        include_once "config/db.php";
+        $sql = mysqli_query($conn, "SELECT * FROM signin WHERE id = {$_SESSION['unique_id']}");
+        if (mysqli_num_rows($sql) > 0) {
+            # code...
+            $row = mysqli_fetch_assoc($sql);
+            
+        }
+
+    ?>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
         <!-- <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -78,8 +94,8 @@
                     <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                         <i class="fa fa-user fa-3x text-primary"></i>
                         <div class="ms-3">
-                            <p class="mb-2">Log out</p>
-                            <h6 class="mb-0">Name  </h6>
+                            <p class="mb-2"><a href="config/logout.php?unique_id=<?php echo $row['id']; ?>"> Log out</a>  </p>
+                            <h6 class="mb-0"><?php echo $row['name']; ?></h6>
                         </div>
                     </div>
                 </div>
