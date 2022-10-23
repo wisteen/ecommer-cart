@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-const usend = form.querySelector('#signup');
+const usend = form.querySelector('#signin');
 
 form.onsubmit = (e)=>{
     e.preventDefault();
@@ -8,7 +8,7 @@ form.onsubmit = (e)=>{
 
 usend.addEventListener("click", ()=>{
     const h = new XMLHttpRequest();
-    h.open('POST', 'config/signup.php', true);
+    h.open('POST', 'config/login.php', true);
 
     h.onload = () =>{
         if (h.readyState === XMLHttpRequest.DONE) {
@@ -18,7 +18,12 @@ usend.addEventListener("click", ()=>{
                 if(data == "success"){
                     location.href = "admin.php";
                 } else{
-                    
+                    const altt = document.querySelector(".altt");
+
+                    altt.innerHTML = data;
+                    let atype = "Warning!";
+                    document.querySelector(".aaa").innerHTML=atype;
+                    document.querySelector(".js-alt").setAttribute("class", "alert alert-primary alert-dismissible js-alt");
                 }
 
 
