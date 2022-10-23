@@ -11,12 +11,13 @@ try {
 //  echo $date;
     //code...
     if(!empty($name) && !empty($password) && !empty($email)){
-        $sql = "INSERT INTO `signup`(`name`, `email`, `password`, `date_added`) 
+        $sql = "INSERT INTO `signin`(`name`, `email`, `password`, `date_added`) 
         VALUES ('".$name."','".$email."','".$password."','".$date."')";
         $query = mysqli_query($conn, $sql);
     
         if($query){
-            echo "You can now sign in!";
+            echo "You can now <a href='signin.html'>sign in</a>!";
+
         } else {
             header("location:../error.php");
     
@@ -27,8 +28,10 @@ try {
      }
 
 } catch (\Throwable $th) {
-    //throw $th;
-    header("location:../error.php");
+    throw $th;
+    // header("location:../error.php");
+    echo "They was an error in the server!".$th;
+
 }
 
 ?>

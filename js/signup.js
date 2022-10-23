@@ -15,20 +15,20 @@ usend.addEventListener("click", ()=>{
             if(h.status == 200){
                 let data = h.response;
                 
-                if(data == "We have recieved your messasge, We will get back to you as soon as possible!"){
+                if(data == "You can now sign in!"){
                 const altt = document.querySelector(".altt");
 
                     altt.innerHTML = data;
                     let atype = "success";
                     document.querySelector(".aaa").innerHTML=atype;
-                    document.querySelector(".js-alt").setAttribute("class", "alert alert-success alert-dismissible js-alt");
+                    document.querySelector(".js-alt").setAttribute("class", "alert alert-primary alert-dismissible js-alt");
                 } else {
                     const altt = document.querySelector(".altt");
 
                     altt.innerHTML = data;
-                    let atype = "Warning";
+                    let atype = "Warning!";
                     document.querySelector(".aaa").innerHTML=atype;
-                    document.querySelector(".js-alt").setAttribute("class", "alert alert-warning alert-dismissible js-alt");
+                    document.querySelector(".js-alt").setAttribute("class", "alert alert-primary alert-dismissible js-alt");
                 }
             }
         }
