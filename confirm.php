@@ -155,7 +155,8 @@
 
                 <div class="row g-4 bg-white rounded d-flex align-items  p-4 mt-4">
                     <div class='col-sm-4 col-xl-4 bg-black '>
-                    <button class='btn btn-sm btn-primary'  onclick="pdf()">Save as PDF</button>
+                <button class="btn btn-sm btn-primary text-white font-bold py-2 px-4 rounded" onclick="generate()">Generate pdf</button>
+
                     </div>
 
                     <div class='col-sm-4 col-xl-4 bg-black '>
@@ -208,12 +209,27 @@
      <!-- Template Javascript -->
      <script src="lib/main.js"></script>
      <script src="jspdf.min.js_1.5.3/cdnjs/jspdf.min.js"></script>
-     <script>
-        function pdf(){
-    
+
+</body>
+</html>
 
 
-    function generate() {
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+
+
+
+
+
+
+
+<script>
+function generate() {
 var doc = new jsPDF("p", "pt", "a4", true);
 
 
@@ -227,16 +243,12 @@ pagesplit: true,
 
 
 function(dispose) {
-doc.save("prestige.pdf");
+doc.save("PHPLift.pdf");
 }
 );
 
 
-
 }
-
-        }
-       
-     </script>
+</script>
 </body>
 </html>
