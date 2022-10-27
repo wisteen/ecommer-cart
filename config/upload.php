@@ -83,15 +83,16 @@ if(isset($_POST['submit']) && isset($_POST['ProductName'])){
 
     for ($i=0; $i < count($productname); $i++) {
         
-        $sql = "INSERT INTO `ordering`(`name`, `phone`, `address`, `email`, `unique_id`, `time_date`, `productname`, `productsize`, `productquantity`)
-         VALUES ('".$username."','".$userphone."','".$useradress."','".$useremail."','".$name2."','".$date."','".$productname[$i]."','".$productsize[$i]."','".$productquality[$i]."')";
+        $sql = "INSERT INTO `ordering`(`status`,`name`, `phone`, `address`, `email`, `unique_id`, `time_date`, `productname`, `productsize`, `productquantity`)
+         VALUES ('pending','".$username."','".$userphone."','".$useradress."','".$useremail."','".$name2."','".$date."','".$productname[$i]."','".$productsize[$i]."','".$productquality[$i]."')";
 
         $query = mysqli_query($conn, $sql);
          
    }
 
    if($query){
-    echo "Successfull";
+    
+    header("location:../confirm.php?uniqueid={$name2}");
    } else {
     echo "problem";
 

@@ -7,7 +7,7 @@ if (isset($_SESSION['unique_id'])) {
     $date = date("l jS \of F Y h:i:s A");
     $logout_id = mysqli_real_escape_string($conn, $_GET['logout_id']);
 
-    $sql_query = mysqli_query($conn, "UPDATE signin SET last_login = '{$data}' ");
+    $sql_query = mysqli_query($conn, "UPDATE signin SET last_login = '".$date."' ");
     if ($sql_query) {
         # code...
         session_unset();

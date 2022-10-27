@@ -87,48 +87,7 @@ if (!isset($_SESSION['unique_id'])) {
             </nav>
         </div>
         <!-- Sidebar End -->
-<div class="content" style="background:linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(image/Nice\ Background.jpg);">
-        <div class="container-fluid pt-4 px-4">
-            <div class="row g-4">
-                <div class="col-sm-6 col-xl-3">
-                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-user fa-3x text-primary"></i>
-                        <div class="ms-3">
-                            <p class="mb-2"><a href="config/logout.php?unique_id=<?php echo $row['id']; ?>"> Log out</a>  </p>
-                            <h6 class="mb-0"><?php echo $row['name']; ?></h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-shopping-cart fa-3x text-primary"></i>
-                        <div class="ms-3">
-                            <p class="mb-2">Total Orders</p>
-                            <h6 class="mb-0">1234</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-car fa-3x text-primary"></i>
-                        <div class="ms-3">
-                            <p class="mb-2">Total Delivery</p>
-                            <h6 class="mb-0">1234</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fa fa-chart-area fa-3x text-primary"></i>
-                        <div class="ms-3">
-                            <p class="mb-2">Total Images</p>
-                            <h6 class="mb-0">234</h6>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
+        <?php include "config/head.php"; ?>
 
        <div class="container-fluid pt-4 px-4">
 
@@ -173,18 +132,38 @@ if (!isset($_SESSION['unique_id'])) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a>
-                                        <a class="btn btn-sm btn-success" href="">update</a>
-                                        <!-- <a class="btn btn-sm btn-secondary" href="">delete</a> -->
+                            <?php
+            require_once "config/db.php";
+
+            $select_all = mysqli_query($conn, "SELECT * , count(*) FROM ordering GROUP BY unique_id");
+
+            if (mysqli_num_rows($select_all)> 0) {
+                # code...
+                 while($micro = mysqli_fetch_assoc($select_all)) {
+
+                       echo "<tr>
+                                    <td>".$micro['id']."</td>
+                                    <td>".$micro['time_date']."</td>
+                                    <td>".$micro['unique_id']."</td>
+                                    <td>".$micro['name']."</td>
+                                    <td>".$micro['productname']."</td>
+                                    <td>".$micro['status']."</td>
+                                    <td>
+                                        <a class='btn btn-sm btn-primary' href='view.php?uniqueid=".$micro['unique_id']."'>Detail</a>
+                                        <a class='btn btn-sm btn-success' href='update.php?uniqueid=".$micro['unique_id']."'>update</a>
                                     </td>
-                                </tr>
+                                </tr>";
+                 }
+            } else {
+
+                echo "<tr>No orders available!</tr>";
+
+            }
+
+
+        ?>
+
+                                
                               
                             </tbody>
                         </table>
