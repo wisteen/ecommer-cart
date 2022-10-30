@@ -9,12 +9,12 @@ addBtn.addEventListener("click", ()=>{
     addtop.insertAdjacentHTML('beforebegin',`
                             <div class="row mt-5 itemList">
                                         <div class="col-md-6">
-                                             <input type="text" placeholder="Product Name" name="ProductName" class="form-control">
+                                             <input type="text" placeholder="Product Name" name="ProductName[]" class="form-control" value="">
                                             
                                         </div>
 
                                         <div class="col-sm-2">
-                                                <select name="size" id="size" class="form-control" >
+                                                <select name="size[]" id="size" class="form-control" value="">
                                                         <option value="">Qty</option>
                                                         <option value="small">Small</option>
                                                         <option value="medium"> Medium</option>
@@ -23,7 +23,7 @@ addBtn.addEventListener("click", ()=>{
                                         </div>
 
                                         <div class="col-sm-2">
-                                                <select name="quality" id="quality" class="form-control d-md-flex" >
+                                                <select name="quality[]" id="quality" class="form-control d-md-flex" value="">
                                                         <option value="">Size</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
@@ -60,7 +60,7 @@ addBtn.addEventListener("click", ()=>{
     `)
 });
 
-
+// remove product
 
 document.addEventListener('click', function(e){
         if(e.target && e.target.classList.contains("removePro") || e.target.classList.contains("icon"))
@@ -158,3 +158,40 @@ document.addEventListener('click', function(e){
 
         
  });
+<<<<<<< HEAD
+=======
+
+
+
+
+
+ const files = document.querySelector(".files");
+
+ files.addEventListener('change', function(evt) {
+        const bttn = document.querySelector('.bttn');
+        var file = document.getElementById('file').files[0];
+    
+        if(file && file.size < 5242880) { // 5 MB (this size is in bytes)
+            //Submit form   
+            alert("Make sure you select not more than 3 files (5mb max) else you would not be able to proceed!");     
+            bttn.disabled = false;
+
+        } else {
+            //Prevent default and display error
+                bttn.disabled = true;
+
+        }
+    }, false);
+
+
+
+//     document.addEventListener("click",function(event){
+//         if(event.target){
+//         console.log(event.target);
+//         }
+//     });
+
+
+
+    
+>>>>>>> d8694cb5680ef4e01cc13093d301a0d55bb5dea1

@@ -15,7 +15,11 @@
 
 <body>
         <div class="container-fluid position-relative d-flex p-0" style="background: linear-gradient(180deg, white, rgba(255, 255, 255, 0));background-repeat: no-repeat;">
+<<<<<<< HEAD
                 <form action="" method="post" class="cntf" class="d-none d-md-flex ms-4" enctype='multipart/form-data'>
+=======
+                <form  method="post" action="config/upload.php" class="cntf" class="d-none d-md-flex ms-4" enctype='multipart/form-data'>
+>>>>>>> d8694cb5680ef4e01cc13093d301a0d55bb5dea1
                         <img src="image/header-logo.png" alt="logo" srcset="" class = "img-responsive" 
                         style="width: 200px; height: 70px;">
                         <h2 style="color:black">Please fill in the form</h2>
@@ -65,16 +69,22 @@
                         <div class="row mt-5">
                                 <div class="col-sm-4">
                                         <input class="form-control" type="file" name="file[]" id="file" multiple>
+                                        <input class="form-control files" type="file" name="file[]" id="file" multiple value="">
                                 </div>
 
                                 <div class=" col-sm-4">
-                                        <input class="form-control" type="email" name="uaddress"
+                                        <input class="form-control" type="email" name="email"
                                                 placeholder="Email Address">
                                 </div>
                                 <div class=" col-sm-4 ">
 
+<<<<<<< HEAD
                                         <input class="form-control btn btn-warning bttn" type="button"
                                                 value="Make your orders" name="submit" disabled>
+=======
+                                        <input type="submit" class="form-control btn btn-warning bttn" 
+                                                value="Make your orders" name="submit" >
+>>>>>>> d8694cb5680ef4e01cc13093d301a0d55bb5dea1
                                 </div>
                         </div>
 
@@ -86,8 +96,8 @@
         <script src="main.js"></script>
 </body>
 <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/boot.css">
+        <!-- <link rel="stylesheet" href="css/boot.css">
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./style.css"> -->
 
 </html>
