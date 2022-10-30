@@ -158,6 +158,8 @@ document.addEventListener('click', function(e){
 
         
  });
+<<<<<<< HEAD
+=======
 
 
 
@@ -192,3 +194,4 @@ document.addEventListener('click', function(e){
 
 
     
+>>>>>>> d8694cb5680ef4e01cc13093d301a0d55bb5dea1

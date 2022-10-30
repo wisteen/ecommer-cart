@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+<?php
+
+if(isset($_POST['submit'])){
+    // Count total files
+    $countfiles = count($_FILES['file']['name']);
+    
+    echo $countfiles;
+    // // Looping all files
+    // for($i=0;$i<$countfiles;$i++){
+    //   $filename = $_FILES['file']['name'][$i];
+      
+    //   // Upload file
+    //   move_uploaded_file($_FILES['file']['tmp_name'][$i],'upload/'.$filename);
+       
+    // }
+   } 
+=======
 <style>
  table{
     font-family:arial, sans-serif;
@@ -101,5 +119,6 @@ if(isset($_POST['submit']) && isset($_POST['ProductName'])){
    } else {
     echo "You need to add to your cart";
    }
+>>>>>>> d8694cb5680ef4e01cc13093d301a0d55bb5dea1
 ?>
    
