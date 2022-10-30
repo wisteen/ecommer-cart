@@ -84,4 +84,77 @@ document.addEventListener('click', function(e){
 
 
         }
-})
+});
+
+
+// validate inputs from users
+
+// phone numbers
+ const foneNo = document.querySelector('[type="number"]');
+
+ foneNo.addEventListener("keyup", function(e){
+        const val = e.target.value;
+        const label = document.querySelector('[for="phone"]');
+        const label2 = document.querySelector('[for="phone"]');
+        const bttn = document.querySelector('.bttn');
+
+        // console.log(label2);
+        if(
+        val.substring().length === 11 &&
+        val.substring(0,3) === "080" 
+          ){
+                label.classList.remove('text-danger');
+                label.classList.add('text-success');
+                label2.innerHTML = `<i class="fa fa-check"></i>`;
+                bttn.disabled = false;
+                
+        } else if(
+        val.substring().length === 11 &&
+        val.substring(0,3) === "081"
+        ){
+                label.classList.remove('text-danger');
+                label.classList.add('text-success');
+                label2.innerHTML = `<i class="fa fa-check"></i>`;
+                bttn.disabled = false;
+
+        } else if(
+        val.substring().length === 11 &&
+        val.substring(0,3) === "090"
+        ){
+                label.classList.remove('text-danger');
+                label.classList.add('text-success');
+                label2.innerHTML = `<i class="fa fa-check"></i>`;
+                bttn.disabled = false;
+
+        
+        }else if(
+        val.substring().length === 11 &&
+        val.substring(0,3) === "091"
+        ){
+                label.classList.remove('text-danger');
+                label.classList.add('text-success');
+                label2.innerHTML = `<i class="fa fa-check"></i>`;
+                bttn.disabled = false;
+
+        
+        }else if(
+        val.substring().length === 11 &&
+        val.substring(0,3) === "070"
+        ){
+                label.classList.remove('text-danger');
+                label.classList.add('text-success');
+                label2.innerHTML = `<i class="fa fa-check"></i>`;
+                bttn.disabled = false;
+
+
+        
+        }else {
+                label.classList.add('text-danger');
+                label.classList.remove('text-success');
+                label2.innerHTML = `<i class="fa fa-times"></i>`;
+                bttn.disabled = true;
+
+        }
+
+        
+ });
