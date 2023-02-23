@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 
 if(isset($_POST['submit'])){
@@ -15,7 +15,6 @@ if(isset($_POST['submit'])){
        
     // }
    } 
-=======
 <style>
  table{
     font-family:arial, sans-serif;
@@ -119,6 +118,5 @@ if(isset($_POST['submit']) && isset($_POST['ProductName'])){
    } else {
     echo "You need to add to your cart";
    }
->>>>>>> d8694cb5680ef4e01cc13093d301a0d55bb5dea1
 ?>
    
